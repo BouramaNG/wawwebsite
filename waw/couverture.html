@@ -17,6 +17,9 @@
         </script>
         <link href="" rel="shortcut icon" type="image/x-icon"/>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
         <!-- <link href="https://cdn.prod.website-files.com/65c352947c29fc3991eb2346/65cdeeeed88274e7c67994b8_CN_Webclip.jpg" rel="apple-touch-icon"/> -->
         <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y50SDGPH13"></script>
         <script type="text/javascript">
@@ -47,7 +50,153 @@
             }
             )(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
         </script>
+<style>
+ .eligibilite_test_section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
 
+.message-maya {
+    margin-bottom: 20px;
+}
+
+.message-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.message-body {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.maya_img_elig {
+    display: block;
+    margin: 10px auto;
+    width: 80px;
+    height: auto;
+}
+
+.question-row ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.question-row .reponse {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.question-row .reponse:hover {
+    background-color: #0056b3;
+}
+
+.resulat_eligibilite {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.resulat_eligibilite.ok {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.resulat_eligibilite.ko {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.resulat_eligibilite img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.res_title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.resulat_eligibilite a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.resulat_eligibilite a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+.eligibilite_section {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.message-maya {
+    /* background-color: #e1f5fe; */
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+
+
+.message-body {
+    font-size: 16px;
+    color: #333;
+}
+
+.reponse {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.reponse:hover {
+    background-color: #004d40;
+}
+
+.resulat_eligibilite {
+    margin-top: 20px;
+}
+
+.ok, .ko {
+    display: none;
+}
+
+.ok .res_title, .ko .res_title {
+    font-size: 22px;
+    color: #4caf50;
+}
+
+</style>
 
     </head>
     <body>
@@ -104,10 +253,10 @@
                                     </nav>
                                 </div>
                                
-                                <a href="couverture.html" class="link_nav w-inline-block">
-                                    <div>Couverture</div>
-                                </a>
-                            
+                               
+                                <a href="apropos.html" class="link_nav w-inline-block">
+                                  <div>A propos</div>
+                              </a>
                                 <a href="contacte.html" class="link_nav w-inline-block">
                                     <div>Contact</div>
                                 </a>
@@ -126,87 +275,10 @@
                         </div>
                     </div>
                 </div>
-                <section class="home-hero_section" style="background-color: #FFDD33; padding: 50px 0;">
-                  <div class="container">
-                    <div class="page-padding">
-                      <div class="layout_columns" style="display: flex; flex-wrap: wrap;">
-                
-                        <!-- Colonne de texte à gauche -->
-                        <div class="column text-column" style="flex: 1; padding: 20px;">
-                          <h1 style="font-size: 2em; color: black;">À Propos de WawTelecom Mot du DG</h1>
-                          <p style="color: black; font-size: 1.5em;">
-                            <b>WawTelecom</b>, est un leader innovant dans le secteur des télécommunications au Sénégal, offrant une gamme complète de services télécoms résidentiels et professionnels. Nous nous engageons à fournir des solutions technologiques avancées, allant de l'Internet haut débit à la téléphonie mobile et aux services cloud.
-                          </p>
-                
-                          <!-- Barres de progression dynamiques -->
-                          <div class="progress-bars" style="margin-top: 20px;">
-                            <div class="progress-item" style="margin-bottom: 10px;">
-                              <span style="color: black; font-size: 15px; font-weight: bold;">Interconnexion Sites</span>
-                              <div class="progress-bar" style="position: relative; background: #333; height: 10px;">
-                                <div class="progress" data-goal="95" style="background: #FFDD33; height: 100%; width: 0%; font-size: 20px;">
-                                  <span class="percentage-circle" style="position: absolute; top: -15px; right: -30px; color: #FFDD33; font-weight: bold;">0%</span>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            <div class="progress-item" style="margin-bottom: 10px; margin-top: 10px;">
-                              <span style="color: black;font-size: 15px; font-weight: bold;margin-top: 10px;">Liaison Spécialisée</span>
-                              <div class="progress-bar" style="position: relative; background: #333; height: 10px;margin-top: 20px;">
-                                <div class="progress" data-goal="90" style="background: #FFDD33; height: 100%; width: 0%;font-size: 20px">
-                                  <span class="percentage-circle" style="position: absolute; top: -15px; right: -30px; color: #FFDD33; font-weight: bold;">0%</span>
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                
-                        
-                        </div>
-                
-                        <!-- Colonne d'image à droite -->
-                        <div class="column image-column" style="flex: 1; display: flex; justify-content: center; align-items: center;">
-                          <img src="https://wawtelecom.com/maintenance/apropos.jpeg" alt="Business Connectivity" style="width: 90%; height: auto; max-width: 400px;">
-                        </div>
-                
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                
+             
                 
               
-                <section class="section-cards">
-                  <!-- Carte 1 : Notre Mission -->
-                  <div class="card">
-                    <div class="card-icon">🌟</div>
-
-                      <div class="card-title">Notre Mission</div>
-                      <div class="card-text">
-                          Nous nous engageons à fournir des solutions de haute qualité adaptées aux besoins de nos clients, en restant à l'écoute de leurs attentes et en offrant un service exceptionnel.
-                      </div>
-                  </div>
-          
-                  <!-- Carte 2 : Notre Force -->
-                  <div class="card">
-                    <div class="card-icon">💪</div>
-                      <div class="card-title">Notre Force</div>
-                      <div class="card-text">
-                          Notre équipe expérimentée et passionnée est notre plus grande force. Elle nous permet de relever les défis et de proposer des solutions innovantes en permanence.
-                      </div>
-                    
-                  </div>
-          
-                  <!-- Carte 3 : Notre Conviction -->
-                  <div class="card">
-                    <div class="card-icon">💡</div>
-                      <div class="card-title">Notre Conviction</div>
-                      <div class="card-text">
-                          Nous croyons fermement en l'importance de la transparence, de l'intégrité et du respect, que nous appliquons dans toutes nos relations avec nos clients et partenaires.
-                      </div>
-                    
-                  </div>
-              </section>
-
+               
 
               <section class="section" style="margin-top: 50px;">
                 <div class="container">
@@ -217,8 +289,8 @@
                               
                             </div>
                             <div class="column">
-                                <h1 class="text-size-h1">Nous voulons comprendre vos besoins en matière de connectivité</h1>
-                                <p class="text-size-body">Nos projets commencent tous par la définition de vos objectifs, de vos besoins en termes d'application et de diversité et des défis auxquels vous pourriez être confronté. À partir de là, nous élaborons un plan de connectivité robuste avant d'orchestrer et de gérer la connectivité de votre entreprise, ce qui signifie que vous ne traitez qu'avec nous.</p>
+                                <h1 class="text-size-h1">Notre couverture de connectivité disponible partout au senegal </h1>
+                                <p class="text-size-body">Des services de sécurité réseau de nouvelle génération fournis et intégrés dans le cloud, associés à une connectivité de premier ordre, garantissent que votre connectivité réseau est performante et protégée. Toujours. Découvrez ci-dessous comment nous pouvons vous aider dans votre région.</p>
                                 <a data-w-id="cc7c2d93-bcaf-b149-6b74-392c9727aaa6" style="color:rgb(0,0,0)" href="#" class="link_button is--open-modal w-inline-block">
                                     <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);display:none;opacity:0;filter:blur(5px)" class="hover_circle"></div>
                                     <div class="contact">
@@ -233,45 +305,106 @@
             </section>
             
 
-
-
-
-           <div> <h1 style="text-align: center;">Quelques de nos partenaires </h1></div>
-            <section class="section-partenaires">
-             
+            <section class="home-hero_section" style="background-color: #FFDD33; ">
+              <div class="container">
+                <div class="page-padding">
+                  <div class="layout_columns" style="display: flex; flex-wrap: wrap;">
             
-              <!-- Carte 1 : Partenaire A -->
-              <div class="partenaire-card">
-                  <img src="afrix.png" alt="Logo Partenaire A" class="partenaire-image">
-                  <div class="partenaire-nom">AFR-X</div>
-                  <div class="partenaire-description">
-                      texte a mettre
+                    <!-- Colonne de texte à gauche -->
+                    <div class="column text-column" style="flex: 1; padding: 20px;">
+                      <h1 style="font-size: 2em; color: black;">Taux de couverture a 86 % a Dakar</h1>
+                      <p style="color: black; font-size: 1.5em;">
+                        <b>WawTelecom</b>,nous avons un taux de couverture a plus de 86 % a Dakar , partout ou vous etez nous venons a vous !.
+                      </p>
+            
+                      <!-- Barres de progression dynamiques -->
+                      <div class="progress-bars" style="margin-top: 20px;">
+                        <div class="progress-item" style="margin-bottom: 10px;">
+                          <span style="color: black; font-size: 15px; font-weight: bold;">Taux de couverture a Dakar </span>
+                          <div class="progress-bar" style="position: relative; background: #333; height: 10px;">
+                            <div class="progress" data-goal="86" style="background: #FFDD33; height: 100%; width: 0%; font-size: 20px;">
+                              <span class="percentage-circle" style="position: absolute; top: -15px; right: -30px; color: #FFDD33; font-weight: bold;">0%</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="progress-item" style="margin-bottom: 10px; margin-top: 10px;">
+                          <span style="color: black;font-size: 15px; font-weight: bold;margin-top: 10px;">Taux de couverture National </span>
+                          <div class="progress-bar" style="position: relative; background: #333; height: 10px;margin-top: 20px;">
+                            <div class="progress" data-goal="74" style="background: #FFDD33; height: 100%; width: 0%;font-size: 20px">
+                              <span class="percentage-circle" style="position: absolute; top: -15px; right: -30px; color: #FFDD33; font-weight: bold;">0%</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+            
+                    
+                    </div>
+            
+                    <!-- Colonne d'image à droite -->
+                    <div class="column image-column" style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                      <img src="https://wawtelecom.com/maintenance/apropos.jpeg" alt="Business Connectivity" style="width: 90%; height: auto; max-width: 400px;">
+                    </div>
+            
                   </div>
+                </div>
               </div>
-      
-              <!-- Carte 2 : Partenaire B -->
-              <div class="partenaire-card">
-                  <img src="banqueatlantique.jpeg" alt="Logo Partenaire B" class="partenaire-image">
-                  <div class="partenaire-nom">Banque Atlantique</div>
-                  <div class="partenaire-description">
-                     Texte a mettre
-                  </div>
-              </div>
-      
-              <!-- Carte 3 : Partenaire C -->
-              <div class="partenaire-card">
-                  <img src="waw.png" alt="Logo Partenaire C" class="partenaire-image">
-                  <div class="partenaire-nom">Autres Client</div>
-                  <div class="partenaire-description">
-                      Texte a mettre.
-                  </div>
-              </div>
-      
-              <!-- Ajoutez plus de cartes de partenaires ici selon vos besoins -->
+            </section>
+            
+
+
+        
+
+
+            <section class="eligibilite_section" >
+              <div class="eligibilite_test_form">
+                <div class="ajax_loader"></div>
+                <div class="questions_eligibilite" >
+                    <div class="message-maya" >
+                        <h2 class="message-title" >Salamaleikoum !, Bonjour !</h2>
+                        <div class="message-body">
+                            <img src="eligibliti-removebg-preview.png" class="bourama_eligiblity" style="width: 250px; height: 200px;">
+                            Salut nous allons  vous aidez a vérifié ensemble si la Fibre est disponible dans votre zone. Êtes-vous prêt ?
+                        </div>
+                    </div>
+                    <div class="question-row" id="firstquestion">
+                        <div class="message-maya">
+                            <div class="message-body">
+                                Êtes-vous à l’endroit où vous souhaitez installer la fibre ? Nous allons récupérer vos coordonnées GPS si vous nous l’autorisez.
+                            </div>
+                        </div>
+                        <ul>
+                            <li class="reponse location_type" onclick="activateGeolocation()">Oui, activer la géolocalisation</li>
+                            <li class="reponse location_type" onclick="showMap()">Non, je suis à un autre endroit</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <!-- Conteneur de la carte, caché par défaut -->
+                <div id="mapContainer" style="display: none;">
+                    <div id="map" style="height: 400px; width: 100%;"></div>
+                </div>
+            
+                <div class="resulat_eligibilite ok" id="eligible_res" style="display: none;">
+                    <img src="" class="valide">
+                    <h2 class="res_title">Bonne nouvelle !</h2>
+                    <p>Vous êtes dans une zone couverte par la fibre.</p>
+                </div>
+            
+                <div class="resulat_eligibilite ko" id="not_eligible_res" style="display: none;">
+                    <img src="">
+                    <h2 class="res_title">Bientôt chez vous !</h2>
+                    <p>Votre zone n'est pas encore éligible à la Fibre.</p>
+                    <a href="contacte.html">Restons en contact</a>
+                </div>
+            </div>
+            
           </section>
-
-
-
+          
+          
+          
+          
                
                 
               
@@ -405,5 +538,127 @@
 });
 
         </script>
+
+
+<script>
+ // Initialiser la carte avec Leaflet (cachée par défaut)
+let map;
+let userMarker;
+const fibreSites = [
+    { name: "SEDIMA", latitude: 14.750649, longitude: -17.287432 },
+    { name: "THIAROYE", latitude: 14.746242, longitude: -17.378500 },
+    { name: "GUEDIAWAYE", latitude: 14.769844, longitude: -17.387992 },
+    { name: "CAMBERENE", latitude: 14.756736, longitude: -17.427606 },
+    { name: "WAW_HQ", latitude: 14.749646, longitude: -17.505691 },
+    { name: "HANN MARISTE SENELEC", latitude: 14.731362, longitude: -17.438944 },
+    { name: "YOFF", latitude: 14.755881, longitude: -17.470941 },
+    { name: "MAMELLES", latitude: 14.728706, longitude: -17.493093 },
+    { name: "SCAT URBAM", latitude: 14.735811, longitude: -17.463903 },
+    { name: "MEDINA", latitude: 14.677563, longitude: -17.446321 },
+    { name: "BUILDING KEBE", latitude: 14.668708, longitude: -17.4400997 },
+    { name: "WAW_SALY (Gendarmerie)", latitude: 14.444083, longitude: -17.006721 },
+    { name: "MALICK SY", latitude: 14.782421, longitude: -16.940210 },
+    { name: "NGUERIGNE", latitude: 14.464910, longitude: -17.051783 },
+    { name: "SALY SDE", latitude: 14.445448, longitude: -17.006366 }
+];
+
+// Fonction pour afficher la carte lorsque l'utilisateur clique sur "Non, je suis à un autre endroit"
+function showMap() {
+    document.getElementById('mapContainer').style.display = 'block';
+    
+    // Initialiser la carte si elle n'existe pas encore
+    if (!map) {
+        map = L.map('map').setView([14.6928, -17.4467], 12); // Centré sur Dakar par défaut
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+        }).addTo(map);
+
+        // Ajouter des marqueurs pour chaque site
+        fibreSites.forEach(site => {
+            L.marker([site.latitude, site.longitude]).addTo(map)
+                .bindPopup(`<b>${site.name}</b>`);
+        });
+
+        // Écouteur d'événement pour détecter le clic de l'utilisateur sur la carte
+        map.on('click', (e) => {
+            const { lat, lng } = e.latlng;
+
+            // Si un marqueur utilisateur existe déjà, le retirer
+            if (userMarker) {
+                map.removeLayer(userMarker);
+            }
+            
+            // Ajouter un marqueur pour la position sélectionnée
+            userMarker = L.marker([lat, lng]).addTo(map)
+                .bindPopup("<b>Position sélectionnée</b>").openPopup();
+
+            // Vérifier l'éligibilité pour la position sélectionnée
+            checkEligibility(lat, lng);
+        });
+    }
+}
+
+// Fonction pour activer la géolocalisation
+function activateGeolocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const userLatitude = position.coords.latitude;
+            const userLongitude = position.coords.longitude;
+
+            if (!map) showMap();
+
+            // Centrer la carte et ajouter un marqueur pour l'utilisateur
+            map.setView([userLatitude, userLongitude], 14);
+            userMarker = L.marker([userLatitude, userLongitude]).addTo(map)
+                .bindPopup("<b>Vous êtes ici</b>").openPopup();
+
+            // Vérifier l'éligibilité pour la position de l'utilisateur
+            checkEligibility(userLatitude, userLongitude);
+        }, showError);
+    } else {
+        alert("La géolocalisation n'est pas supportée par votre navigateur.");
+    }
+}
+
+// Fonction de vérification d'éligibilité
+function checkEligibility(lat, lng) {
+    let isEligible = false;
+
+    fibreSites.forEach(site => {
+        const distance = calculateDistance(lat, lng, site.latitude, site.longitude);
+        if (distance <= 5) { // 5 km de rayon pour la zone de couverture
+            isEligible = true;
+        }
+    });
+
+    document.getElementById('eligible_res').style.display = isEligible ? 'block' : 'none';
+    document.getElementById('not_eligible_res').style.display = isEligible ? 'none' : 'block';
+}
+
+// Calculer la distance entre deux points (en km)
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * (Math.PI / 180);
+    const dLon = (lon2 - lon1) * (Math.PI / 180);
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+// Gérer les erreurs de géolocalisation
+function showError(error) {
+    const messages = {
+        1: "Vous avez refusé la demande de géolocalisation.",
+        2: "Les informations de localisation sont indisponibles.",
+        3: "La demande de localisation a expiré.",
+        0: "Une erreur inconnue s'est produite.",
+    };
+    alert(messages[error.code] || messages[0]);
+}
+
+
+</script>
     </body>
 </html>
