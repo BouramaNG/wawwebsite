@@ -1,7 +1,7 @@
 /* Wizardry Fluid Settings */
 body {
   font-size: 1.1111111111111112vw;
-  background-color: #FFDD33 !important;
+  /* background-color: #FFDD33 !important; */
 }
 
 /* Max Font Size */
@@ -29,7 +29,7 @@ body {
 
 /* Main Variables */
 :root {
-  --main-dark: #FFDD33 !important;
+  /* --main-dark: #FFDD33 !important; */
   --main-light: black;
 }
 
@@ -1133,52 +1133,58 @@ right: -25px; /* Ajustez pour l'espacement souhaité */
 
 
 /* Style de la section principale */
-.section-cards {
-          display: flex;
-          justify-content: space-around;
-          padding: 20px;
-          background-color: #f4f4f4;
-      }
-      
-      /* Style des cartes individuelles */
-      .card {
-          width: 30%;
-          background-color: #ffffff;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          padding: 40px;
-          margin: 10px;
-          text-align: center;
-          transition: transform 0.3s;
-      }
+/* Style de la section principale */
+.custom-section-cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
 
-      /* Effet de zoom au survol */
-      .card:hover {
-          transform: scale(1.05);
-          background-color: #FFDD33;
-          color: #333;
-      }
+/* Style des cartes individuelles */
+.custom-card {
+  width: 30%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
 
-      /* Style pour le titre de la carte */
-      .card-title {
-          font-size: 25px;
-          font-weight: bold;
-          color: #333;
-          margin-bottom: 10px;
-      }
+/* Effet de zoom au survol */
+.custom-card:hover {
+  transform: scale(1.05);
+  background-color: #FFDD33;
+  color: #333;
+}
 
-      /* Style du texte de description */
-      .card-text {
-          font-size: 18px;
-          color: #333;
-          margin-bottom: 20px;
-      }
+/* Style de l'icône */
+.custom-card-icon {
+  font-size: 50px;
+  color: #FFDD33;
+  margin-bottom: 15px;
+}
 
-      /* Style de l'icône */
-      .card-icon {
-          font-size: 50px;
-          color: #FFDD33;
-      }
+/* Style pour le titre de la carte */
+.custom-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0;
+  text-align: center;
+}
+
+/* Style du texte de description */
+.custom-card-text {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+
 
 
       /*section partenaire **/
@@ -1687,11 +1693,7 @@ right: -25px; /* Ajustez pour l'espacement souhaité */
           margin-bottom: 20px;
       }
 
-      /* Style de l'icône */
-      .card-icon {
-          font-size: 50px;
-          color: #FFDD33;
-      }
+    
 
 
       /*section partenaire **/
